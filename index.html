@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ng-OneList</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body ng-app="myApp" ng-controller="ListCtrl">
+    <div>
+      {{title}}
+    </div>
+    <label name="name">Name:</label>
+    <input placeholder="Please enter a new TODO item" ng-keypress="updateName()" type='text' ng-model="todos.text" maxlength="100" style="width: 150px"/><br />
+    <!-- <label name='description'>Description:</label>
+    <input type='text' ng-model="todos.description"/> -->
+    <ol>
+    <li ng-repeat="todo in todos" ng-click="deleteItem($index, todo)">{{todo.text}}</li>
+    </ol>
+  </body>
+</html>
