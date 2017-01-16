@@ -6,17 +6,17 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="./main.js"></script>
     <link rel="stylesheet" href="./main.css">
+    <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   </head>
   <body ng-app="myApp" ng-controller="ListCtrl">
-    <div>
+    <h1>
       {{title}}
-    </div>
-    <label name="name">Name:</label>
-    <input placeholder="Please enter a new TODO item" ng-keypress="updateName()" type='text' ng-model="todos.text" maxlength="100" style="width: 150px"/><br />
-    <!-- <label name='description'>Description:</label>
-    <input type='text' ng-model="todos.description"/> -->
-    <ol>
-    <li ng-repeat="todo in todos" ng-click="deleteItem($index, todo)">{{todo.text}}</li>
-    </ol>
+    </h1>
+    <br>
+    <ul class="one-list">
+    <li ng-repeat="todo in todos" ng-model="complete" ng-click="completeTodo()" ng-dblclick="deleteItem($index, todo)">{{todo.text}}</li>
+  </ul>
+  <input ng-keypress="updateName()" type='text' ng-model="todos.text" maxlength="100" />
   </body>
 </html>
